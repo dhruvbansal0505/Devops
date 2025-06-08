@@ -1,0 +1,141 @@
+1.Create a file, assign permissions (read, write, execute) to different user categories (owner, group, others), and practice changing permissions using chmod.
+Answer:
+        $ touch firstfile.txt
+        $ ls -l firstfile.txt
+        -rwxr-x-wx 1
+        $ chmod 711 firstfile.txt
+        $ ls -l firstfile.txt
+        -rwx--x--x 1
+        $ chmod u=rwx,g=rx,o=r firstfile.txt
+        $ ls -l firstfile.txt
+        -rwxr-xr-- 1
+        $ chmod 777 firstfile.txt
+        $ ls -l firstfile.txt
+        -rwxrwxrwx 1 
+        $ chmod go-wx firstfile.txt
+        $ ls -l firstfile.txt
+        -rwxr--r-- 1
+        $ chmod g+x firstfile.txt
+        $ ls -l firstfile.txt
+        -rwxr-xr-- 1
+
+2.Execute basic Linux commands (e.g., ls, cd, mkdir, rm, touch) to manipulate files and directories, with an emphasis on understanding their usage.
+Answer: 
+        $ mkdir dhruv
+        $ mkdir db
+        $ cd dhruv
+        $ ls -l
+        total 0
+        $ cd ..
+        $ cd db 
+        $ cd ..
+        $ ls -d */
+        db/  dhruv/
+        $ touch seconffile.txt
+        $ ls
+        firstfile.txt    secondfile.txt      file.txt
+        $ echo "This is my second file created using linux terminal." >> secondfile.txt
+        $ head secondfile.txt
+        This is my second file created using linux terminal.
+        $ rm secondfile.txt
+        $ ls
+        firstfile.txt    file.txt
+
+3.Using the terminal, practice navigating through directories, listing file contents, and moving files to different locations.
+Answer:
+        $ mv firstfile.txt dhruv
+        $ cd dhruv
+        $ ls
+        firstfile.txt
+        $ cd dhruv
+        $ touch firstfile.txt
+        $ echo "This is my first linux terminal file." >> firstfile.txt
+        $ echo "My name is Dhruv" >> firstfile.txt
+        $ head firstfile.txt
+        This is my first linux terminal file.
+        My name is Dhruv
+        $ head -n 1 firstfile.txt
+        This is my first linux terminal file.
+        $ mv firstfile.txt db
+        $ cd dhruv
+        $ ls
+        db
+
+4.Create a new user and group, set their permissions, and explore user management commands like useradd, usermod, and userdel.
+Answer: 
+        $ pwd
+        /home
+        $ ls
+        root
+        $ useradd dh
+        $ ls 
+        dh   root
+        $ id dh
+        uid=1002(dh) gid=1002(dh) groups=1002(dh)
+        $ useradd -g DB -s /bin/bash -m -d /home/dhr dhr
+        $ id dhr
+        uid=1003(dhr) gid=1001(DB) groups=1001(DB)
+        $ userdel -r dh
+        $ ls
+        dhr  root
+        $ usermod -g dh dhr
+        $ passwd dhr
+        Changing password for user dhr.
+        New password:              
+        passwd: all authentication tokens updated successfully.
+
+5.Practices more linux commands
+Answer:
+        $ cd dhruv
+        $ pwd
+        /home/cg/root/dhruv
+        $ cd ..
+        $ ls -d
+        db/  dhruv/
+        $ rmdir db
+        $ ls -d */
+        dhruv/
+        $ touch firstfile.txt
+        $ echo "This is my first linux terminal file." >> firstfile.txt
+        $ echo "My name is Dhruv" >> firstfile.txt
+        $ touch secondfile.txt
+        $ echo "This is my second file created using linux terminal." >> secondfile.txt
+        $ head firstfile.txt
+        This is my first linux terminal file.
+        My name is Dhruv
+        $ head secondfile.txt
+        This is my second file created using linux terminal.
+        $ cp firstfile.txt secondfile.txt
+        $ head secondfile.txt
+        This is my first linux terminal file.
+        My name is Dhruv
+        $ sort firstfile.txt
+        My name is Dhruv
+        This is my first linux terminal file.
+        $ df -h
+        Filesystem      Size  Used Avail Use% Mounted on
+        overlay         2.0T   13G  1.9T   1% /
+        tmpfs            64M     0   64M   0% /dev
+        shm              64M     0   64M   0% /dev/shm
+        /dev/nvme1n1p3  2.0T   13G  1.9T   1% /usr/sbin/docker-init
+        tmpfs           512M     0  512M   0% /run
+        tmpfs           1.0G   28K  1.0G   1% /tmp
+        tmpfs            16G   24M   16G   1% /home/cg/root
+        tmpfs            63G     0   63G   0% /proc/acpi
+        tmpfs            63G     0   63G   0% /proc/scsi
+        tmpfs            63G     0   63G   0% /sys/firmware
+        tmpfs            63G     0   63G   0% /sys/devices/virtual/powercap
+        $ wc -w firstfile.txt
+        11 firstfile.txt
+        $ wc -l firstfile.txt
+        2 firstfile.txt
+        $ wc -m firstfile.txt
+        55 firstfile.txt
+
+
+
+
+
+
+
+
