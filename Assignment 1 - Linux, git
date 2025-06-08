@@ -1,4 +1,4 @@
-1.Create a file, assign permissions (read, write, execute) to different user categories (owner, group, others), and practice changing permissions using chmod.
+1. Create a file, assign permissions (read, write, execute) to different user categories (owner, group, others), and practice changing permissions using chmod.
 Answer:
         $ touch firstfile.txt
         $ ls -l firstfile.txt
@@ -19,7 +19,7 @@ Answer:
         $ ls -l firstfile.txt
         -rwxr-xr-- 1
 
-2.Execute basic Linux commands (e.g., ls, cd, mkdir, rm, touch) to manipulate files and directories, with an emphasis on understanding their usage.
+2. Execute basic Linux commands (e.g., ls, cd, mkdir, rm, touch) to manipulate files and directories, with an emphasis on understanding their usage.
 Answer: 
         $ mkdir dhruv
         $ mkdir db
@@ -41,7 +41,7 @@ Answer:
         $ ls
         firstfile.txt    file.txt
 
-3.Using the terminal, practice navigating through directories, listing file contents, and moving files to different locations.
+3. Using the terminal, practice navigating through directories, listing file contents, and moving files to different locations.
 Answer:
         $ mv firstfile.txt dhruv
         $ cd dhruv
@@ -61,7 +61,7 @@ Answer:
         $ ls
         db
 
-4.Create a new user and group, set their permissions, and explore user management commands like useradd, usermod, and userdel.
+4. Create a new user and group, set their permissions, and explore user management commands like useradd, usermod, and userdel.
 Answer: 
         $ pwd
         /home
@@ -84,7 +84,7 @@ Answer:
         New password:              
         passwd: all authentication tokens updated successfully.
 
-5.Practices more linux commands
+5. Practices more linux commands
 Answer:
         $ cd dhruv
         $ pwd
@@ -131,6 +131,11 @@ Answer:
         2 firstfile.txt
         $ wc -m firstfile.txt
         55 firstfile.txt
+
+6. Introduction to version control and Git basics, Git installation and configuration, Basic Git commands (init, add, commit, push, pull)
+Answer:
+        $ git --version
+        git version 2.30.1.windows.1
 
 
 
