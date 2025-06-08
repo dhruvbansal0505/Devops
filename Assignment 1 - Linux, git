@@ -136,9 +136,124 @@ Answer:
 Answer:
         $ git --version
         git version 2.30.1.windows.1
+        $ git init
+        Initialized empty Git repository in C:/Users/Dhruv/Desktop/myrepo/.git/
+        $ echo "This is my First git file."> file.txt
+        $ git add file.txt
+        warning: LF will be replaced by CRLF in file.txt.
+        The file will have its original line endings in your working directory
+        $ git commit -m "My first file"
+        [master (root-commit) afafe8f] My first file
+        1 file changed, 1 insertion(+)
+        create mode 100644 file.txt
+        $ git remote add origin https://github.com/dhruvbansal0505/myrepo.git
+        $ git push -u origin master
 
+7. Setup a remote repository in Local , Add a file and commit or save the changes and push to master branch
+Answer:
+        $ mkdir myrepo
+        $ cd myrepo
+        $ git init
+        Initialized empty Git repository in C:/Users/Dhruv/Desktop/myrepo/.git/
+        $ echo "This is my First git file."> file.txt
+        $ git add file.txt
+        warning: LF will be replaced by CRLF in file.txt.
+        The file will have its original line endings in your working directory
+        $ git commit -m "My first file"
+        [master (root-commit) afafe8f] My first file
+         1 file changed, 1 insertion(+)
+         create mode 100644 file.txt
+        $ git remote add origin https://github.com/dhruvbansal0505/myrepo.git
+        $ git push -u origin master
+        
+        Enumerating objects: 3, done.
+        Counting objects: 100% (3/3), done.
+        Writing objects: 100% (3/3), 241 bytes | 120.00 KiB/s, done.
+        Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+        To https://github.com/dhruvbansal0505/myrepo.git
+         * [new branch]      master -> master
+        Branch 'master' set up to track remote branch 'master' from 'origin'.
+        https://github.com/dhruvbansal0505/myrepo.git (this is the repository link). 
 
+8. Merge types, Create a new branch then commit and push the changes to new branch and merge it with the master branch using pull request.
+Answer:
+        $ git checkout -b new-branch
+        Switched to a new branch 'new-branch'
+        $ echo "New branch created." >>next.txt
+        $ git add next.txt
+        warning: LF will be replaced by CRLF in next.txt.
+        The file will have its original line endings in your working directory
+        $ git commit -m "new branch"
+        [new-branch 75df7fa] new branch
+         1 file changed, 1 insertion(+)
+         create mode 100644 next.txt
+        $ git push -u origin new-branch
+        Enumerating objects: 4, done.
+        Counting objects: 100% (4/4), done.
+        Delta compression using up to 4 threads
+        Compressing objects: 100% (2/2), done.
+        Writing objects: 100% (3/3), 289 bytes | 144.00 KiB/s, done.
+        Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+        remote:
+        remote: Create a pull request for 'new-branch' on GitHub by visiting:
+        remote:      https://github.com/dhruvbansal0505/myrepo/pull/new/new-branch
+        remote:
+        To https://github.com/dhruvbansal0505/myrepo.git
+         * [new branch]      new-branch -> new-branch
+        Branch 'new-branch' set up to track remote branch 'new-branch' from 'origin'.
+        https://github.com/dhruvbansal0505/myrepo.git (this is the repository link). 
 
+9. Undo the last commit or remove the last created file from remote repo using CLI
+Answer:
+        $ git reset --soft HEAD~1
+        $ git rm --cached next.txt
+        rm 'next.txt'
+        git commit -m "Removed a file"
+        git push origin main
+
+10. Branching and merging in Git, Resolve a merge conflicts
+Answer:
+        $ echo "new file created" > new.txt
+        $ git add new.txt
+        warning: LF will be replaced by CRLF in new.txt.
+        The file will have its original line endings in your working directory
+        $ git commit -m "new branche change"
+        [new-branch 6453563] new branche change
+         1 file changed, 1 insertion(+)
+         create mode 100644 new.txt
+        $ git checkout master
+        Switched to branch 'master'
+        Your branch is up to date with 'origin/master'.
+        $ echo "new file created" > new.txt  
+        $ git add new.txt
+        warning: LF will be replaced by CRLF in new.txt.
+        The file will have its original line endings in your working directory
+        $ git commit -m "new branche change"
+        [master e6ed218] new branche change
+         1 file changed, 1 insertion(+)
+         create mode 100644 new.txt
+        $ git merge new-branch
+        hint: Waiting for your editor to close the file... code --wait: code: command not found
+        error: There was a problem with the editor 'code --wait'.
+        Not committing merge; use 'git commit' to complete the merge.
+        $ git push origin master
+        Enumerating objects: 4, done.
+        Counting objects: 100% (4/4), done.
+        Delta compression using up to 4 threads
+        Compressing objects: 100% (2/2), done.
+        Writing objects: 100% (3/3), 291 bytes | 145.00 KiB/s, done.
+        Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+        To https://github.com/dhruvbansal0505/myrepo.git
+           afafe8f..e6ed218  master -> master
+
+11. Practice More git commands
+Answer:
+        $ mkdir gitpr
+        $ cd gitpr
+        $ git init
+        Initialized empty Git repository in C:/Users/Dhruv/Desktop/myrepo/prac/.git/
+        $ git reflog
+        fatal: your current branch 'master' does not have any commits yet
 
 
 
